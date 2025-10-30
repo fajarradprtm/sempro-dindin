@@ -1,178 +1,261 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>✨ SEMPRO DINDIN — Ninja Medis Pink ✨</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEMPRO DINDIN — Ninja Medis Pink (Final)</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@700;800&display=swap" rel="stylesheet">
 <style>
-  body {
-    background-color: #FF8DA1;
-    overflow: hidden;
-    margin: 0;
-    font-family: "Comic Sans MS", sans-serif;
-    color: #fff;
-    text-align: center;
-  }
+  :root{/*--bg:#FF8DA1;--chakra1:#ff89a8;--chakra2:#ff4da6;--accent:#ff6a00;*/}
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;font-family:'Nunito Sans',system-ui,Roboto;background:#FF8DA1;color:#fff;overflow-x:hidden}
+  .wrap{max-width:1100px;margin:20px auto;padding:24px;text-align:center;position:relative;}
+  .clouds{position:fixed;left:0;top:0;width:200%;height:100%;pointer-events:none;z-index:0;opacity:0.16;}
+  .cloud{position:absolute;top:10%;width:600px;height:120px;background:radial-gradient(ellipse at 30% 30%, rgba(255,255,255,0.95), rgba(255,245,250,0.6));border-radius:60px;filter:blur(18px);}
+  .cloud.c1{left:-20%;animation:moveClouds 48s linear infinite;}
+  .cloud.c2{left:-40%;top:30%;width:800px;height:160px;animation:moveClouds 62s linear infinite;animation-delay:6s;opacity:0.12;}
+  .cloud.c3{left:-10%;top:60%;width:700px;height:140px;animation:moveClouds 54s linear infinite;animation-delay:12s;opacity:0.14;}
+  @keyframes moveClouds{0%{transform:translateX(0)}100%{transform:translateX(60%)}}
 
-  h1 {
-    font-size: 2em;
-    margin-top: 60px;
-    text-shadow: 2px 2px #e75480;
-    animation: scrollText 4s steps(40, end) 1;
-    white-space: nowrap;
-    overflow: hidden;
-    border-right: 3px solid rgba(255,255,255,0.75);
-  }
-
-  @keyframes scrollText {
-    from { width: 0 }
-    to { width: 100% }
-  }
-
-  button {
-    background: white;
-    color: #FF4F79;
-    border: none;
-    padding: 15px 25px;
-    margin: 20px;
-    border-radius: 25px;
-    font-weight: bold;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.5s ease;
-  }
-
-  button:hover {
-    background: #ffe6ec;
-    transform: scale(1.1);
-  }
-
-  .fade-out {
-    opacity: 0;
-    transition: opacity 1s ease;
-  }
-
-  .gift-box {
-    display: none;
-    margin: 50px auto;
-    font-size: 60px;
-    position: relative;
-    animation: bounce 1.5s infinite;
-  }
-
-  @keyframes bounce {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  .bucket {
-    display: none;
-    font-size: 24px;
-    white-space: pre;
-    margin-top: 20px;
-  }
-
-  /* Awan lembut melayang */
-  .cloud {
-    position: absolute;
-    background: rgba(255,255,255,0.8);
-    border-radius: 50%;
-    filter: blur(6px);
-    animation: float 8s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-8px); }
-  }
-
-  .cloud:nth-child(1) { width: 100px; height: 50px; top: 15%; left: 10%; animation-delay: 0s; }
-  .cloud:nth-child(2) { width: 120px; height: 60px; top: 35%; left: 70%; animation-delay: 1s; }
-  .cloud:nth-child(3) { width: 140px; height: 70px; top: 60%; left: 30%; animation-delay: 2s; }
-  .cloud:nth-child(4) { width: 90px; height: 45px; top: 20%; left: 50%; animation-delay: 1.5s; }
-  .cloud:nth-child(5) { width: 110px; height: 55px; top: 75%; left: 80%; animation-delay: 0.8s; }
+  h1{font-size:26px;margin:6px 0;color:#fff;text-shadow:0 6px 18px rgba(0,0,0,0.12);}
+  #ucapan{font-size:20px;font-weight:800;min-height:72px;margin-top:6px;letter-spacing:0.4px;position:relative;z-index:5}
+  #aura{height:16px;margin:10px auto;width:70%;border-radius:10px;background:linear-gradient(90deg,#ff89a8,#ff4da6);opacity:0.2;transition:all 180ms ease;position:relative;z-index:5}
+  .center{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;position:relative;z-index:5}
+  .btn-stage{display:inline-block;padding:12px 18px;border-radius:12px;background:linear-gradient(90deg,#ff7f2a,#ff3910);border:none;color:#fff;font-weight:800;cursor:pointer;box-shadow:0 10px 30px rgba(255,70,20,0.12);transition:opacity 400ms,transform 220ms;outline:none;}
+  .fade-out{opacity:0;transform:translateY(10px);pointer-events:none;transition:opacity 400ms,transform 220ms;}
+  .hidden{display:none}
+  .gift-wrap{position:relative;width:320px;height:240px;margin:18px auto;border-radius:14px;background:linear-gradient(180deg,#ffd6e8,#ff9ac4);box-shadow:0 14px 40px rgba(0,0,0,0.35);overflow:visible;z-index:6}
+  .gift-top{position:absolute;top:-44px;left:50%;transform:translateX(-50%);width:380px;height:110px;border-radius:12px;background:linear-gradient(90deg,#ff8fbf,#ff4da6);display:flex;align-items:center;justify-content:center;font-weight:900;color:#fff;transform-origin:50% 100%;transition:transform 700ms cubic-bezier(.2,.9,.25,1);}
+  .ribbon{position:absolute;left:50%;transform:translateX(-50%);top:-8px;width:26px;height:280px;background:linear-gradient(90deg,#ff5a8a,#ff2f6a);border-radius:12px;z-index:2}
+  .boom{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;pointer-events:none;opacity:0;transition:opacity 300ms;z-index:7}
+  .boom.show{opacity:1}
+  .spark{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle,#fff,#ffd6e8);box-shadow:0 0 40px #ff9ac4,0 0 80px #ff6a6a}
+  #grid{width:300px;height:300px;margin:16px auto;display:grid;grid-template-columns:repeat(40,1fr);gap:1px;border-radius:8px;overflow:hidden;opacity:0;transform:scale(0.92);transition:all 600ms ease;z-index:8;position:relative;background:rgba(0,0,0,0.02)}
+  #grid.show{opacity:1;transform:scale(1)}
+  .pixel{width:100%;height:100%;opacity:0;transform:scale(0.96);transition:opacity 500ms ease, transform 500ms ease}
+  .pixel.show{opacity:1;transform:scale(1)}
+  .aura-ring{position:absolute;left:50%;top:50%;width:420px;height:420px;transform:translate(-50%,-50%);border-radius:50%;pointer-events:none;mix-blend-mode:screen;opacity:0;transition:opacity 400ms;filter:blur(18px);z-index:4}
+  .aura-ring.on{opacity:0.36}
+  #confetti{position:fixed;left:0;top:0;width:100%;height:100%;pointer-events:none;z-index:50}
+  footer{margin-top:18px;color:rgba(255,255,255,0.95);font-size:15px;position:relative;z-index:5;font-weight:800}
 </style>
+<link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23ff69b4%22/><text x=%2250%22 y=%2260%22 font-size=%2250%22 text-anchor=%22middle%22 fill=%22white%22 font-family=%22Arial%22>🌸</text></svg>">
 </head>
 <body>
-
-<!-- Awan -->
-<div class="cloud"></div>
-<div class="cloud"></div>
-<div class="cloud"></div>
-<div class="cloud"></div>
-<div class="cloud"></div>
-
-<h1 id="judul">✨HAPPY SEMPROTULATIONGG YAWW👩🏻‍🎓✨</h1>
-
-<div id="tombolContainer">
-  <button id="btn1">Play</button>
-  <button id="btn2">Ett belom</button>
-  <button id="btn3">Abis ini beneran Play ko</button>
-  <button id="btn4">TAPI BOONG</button>
+<div class="clouds" aria-hidden="true">
+  <div class="cloud c1"></div>
+  <div class="cloud c2"></div>
+  <div class="cloud c3"></div>
 </div>
 
-<div class="gift-box" id="giftBox">🎁</div>
-<div class="bucket" id="bucket">
-🌸🌼🌷🌸🌼🌷🌸
-🌿🌿🌿🌿🌿🌿🌿
-🪻🪻🪻🪻🪻🪻🪻
-💖 MANGATSSS, YAREUUU!! 💖
-✨✨✨
+<div class="wrap">
+  <h1>✨✨✨</h1>
+  <div id="ucapan"></div>
+  <div id="aura"></div>
+
+  <div id="stages" class="center" style="margin-top:18px;z-index:5;">
+    <button id="b1" class="btn-stage">Play</button>
+    <button id="b2" class="btn-stage hidden">Ett belom</button>
+    <button id="b3" class="btn-stage hidden">Abis ini beneran &quot;Play&quot; ko</button>
+    <button id="b4" class="btn-stage hidden">TAPI BOONG</button>
+  </div>
+
+  <div id="kadoArea" style="margin-top:18px;position:relative;z-index:6;">
+    <div id="gift" class="gift-wrap hidden">
+      <div class="ribbon"></div>
+      <div id="giftTop" class="gift-top">TUTUPAN</div>
+      <div class="gift-base"></div>
+      <div id="boom" class="boom"><div class="spark"></div></div>
+      <div id="grid" aria-hidden="true"></div>
+    </div>
+
+    <div id="kado" style="margin-top:12px;z-index:6;"></div>
+  </div>
+
+  <div id="pesan" style="white-space:pre-line;margin-top:18px;z-index:6"></div>
+
+  <div style="margin-top:18px;" id="bucketControlArea" class="center hidden" aria-hidden="true">
+    <button id="takeGift" class="btn-stage btn-ghost">Ambil Gift-nya Disini</button>
+  </div>
+
+  <div id="bucketArea" style="position:relative;min-height:520px;">
+    <div class="aura-ring" id="auraRing"></div>
+  </div>
+
+  <div id="final" style="margin-top:18px;z-index:6"></div>
+
+  <footer>MANGATSSS, YAREUUU!!</footer>
 </div>
 
-<!-- Musik (YouTube embed autoplay) -->
-<iframe id="bgMusic" width="0" height="0"
-  src="https://www.youtube.com/embed/QURWea6FqBI?autoplay=1&loop=1&playlist=QURWea6FqBI"
-  frameborder="0" allow="autoplay"></iframe>
+<canvas id="confetti"></canvas>
 
 <script>
-const tombol = document.querySelectorAll("#tombolContainer button");
-const gift = document.getElementById("giftBox");
-const bucket = document.getElementById("bucket");
+const colorMatrix = [["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f7f6", "#f7f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f3", "#fcf7e9", "#f6f3eb", "#f9f9f7", "#f8f7f5", "#f7f5f3", "#f7f5f3", "#f7f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f5", "#f6f5f3", "#f7f6f4", "#f7f6f5", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fcf8eb", "#f3ebda", "#ddd7cc", "#e4e1d8", "#f6f4f0", "#f7f8f6", "#f7f8f6", "#f8faf8", "#f6f5f4", "#f6f5f4", "#f7f6f4", "#f6f5f3", "#f7f6f5", "#f6f4f0", "#f9f8f7", "#f6f5f4", "#f7f5f1", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f5", "#f8f8f7", "#f7f7f6", "#f7f6f5", "#f7f6f5", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#f7f7f5", "#fffcf3", "#f6efdb", "#eddfdb", "#f4d9da", "#dfc4c0", "#e9ccc9", "#f8e5e6", "#f5e9e9", "#f3dadb", "#fcfdf4", "#faf9f2", "#f8f7f3", "#f9f9f6", "#fbfaf6", "#a5ad70", "#e3e2d4", "#fef7ee", "#f6efdd", "#f7f4ef", "#f7f6f5", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f7f5", "#f6f2ee", "#f4ece4", "#f6f0ea", "#f8f5ee", "#f8f5f1", "#f9f5f3", "#f8f7f4", "#f7f6f4", "#f6f5f4", "#fcfafd", "#d8d8b0", "#e1dfb5", "#e4d9d3", "#f6e1e0", "#f0c9cd", "#f6ddde", "#fadde1", "#ebcbc2", "#eac6c3", "#eaafb7", "#f4e3db", "#fbf6e8", "#faf4e7", "#f8e7e5", "#e4ddbc", "#777c2d", "#868e59", "#ece7d7", "#e8e4cf", "#f7f1e3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f7f5", "#f5f2ed", "#f3e2d2", "#ecdccd", "#e2d8c8", "#e9dfcf", "#ede3d4", "#efe6d5", "#f5ebdc", "#f6eee2", "#f9f4e9", "#f0ecd2", "#8a953e", "#c0b68f", "#fde5e9", "#eed0d0", "#f6e2e4", "#fedee2", "#b1ae6c", "#d2b7a6", "#fae4e8", "#efced0", "#e9c5c7", "#f8e3e2", "#f3d7d9", "#eac8c8", "#e0cbbe", "#878d5a", "#ead3d1", "#e5c5c3", "#f1e1d7", "#f7f4ee", "#f7f6f5", "#f7f6f4", "#f7f7f6", "#f7f6f5", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f7f5", "#f5e8dd", "#ebdbcc", "#cbc5b8", "#d3cdbe", "#d7d1c1", "#cfc8b7", "#dad3c1", "#eae3d1", "#f1d7cb", "#fbdadc", "#a9a375", "#858452", "#ffe6ed", "#f0cdcd", "#f9e1e5", "#f9d9d1", "#999e4c", "#b1a16d", "#f7e7d7", "#fbd8de", "#f8d7db", "#fadadb", "#f7e1e2", "#f5dcde", "#f8d6d5", "#f4d1d1", "#f7ccd1", "#f6d7da", "#f5d1d4", "#fce9e3", "#f7f7f4", "#f8f7f4", "#f7f2ea", "#f5f0e6", "#f7f6f5", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f7f6", "#f4eee7", "#f1dfd0", "#d1c9b9", "#d4cfbe", "#d5cebe", "#d3ccbe", "#e6ddd3", "#e2c0bf", "#f6dbdb", "#f6d0d3", "#ecbabd", "#c2a094", "#f2c4c8", "#f2c4c9", "#fbdee3", "#f0ceba", "#99a146", "#a19054", "#a8a06d", "#efc6ce", "#f9d8d9", "#f9d7d9", "#eecdd2", "#f7dfdf", "#f9d2d3", "#f1b7bf", "#f5c7ca", "#fbe7e6", "#f5d1d2", "#dcc7af", "#f3eddc", "#f1e9db", "#f0e6d4", "#f6eedd", "#f7f5f3", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f5", "#f9f8f3", "#fcf5e8", "#eee0cd", "#dbd2c6", "#d2cabe", "#d5ccbb", "#e3d6cb", "#ffe8e8", "#edd1d5", "#f5e2e3", "#fadcdb", "#f8c9cd", "#fac1c9", "#d994a0", "#d99ca6", "#fcd9dc", "#e7c0b1", "#9daa47", "#8c8541", "#505f1f", "#b59e92", "#fddadd", "#f1d1d2", "#f2d1d6", "#fae2e4", "#f7ccce", "#e69ca7", "#f3d0d3", "#efc7cc", "#ecb1b7", "#999566", "#cecbb6", "#dcd5c5", "#cfc9b9", "#ebe3d3", "#f8f5f2", "#f7f6f5", "#f7f6f4"], ["#f7f6f5", "#f8f6ee", "#faf4e1", "#f0ebdb", "#d2cda8", "#9c9f62", "#b6b290", "#d7cbb9", "#decac6", "#fbe1e4", "#f6dfe0", "#efd9db", "#f9e0e1", "#f6cbce", "#fdc5cc", "#c69395", "#bc9f9f", "#f4c1c6", "#ecb4c0", "#dcc0ad", "#bdb587", "#475824", "#897661", "#ffd6de", "#ebbdc3", "#e3b1b9", "#ffe4e5", "#efb8c0", "#f1cbce", "#f3d7db", "#f4d7dc", "#f1c8d0", "#d4aaa7", "#d3cfbd", "#d8d2c3", "#d6d0c3", "#e5ddcd", "#f8f5ef", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f8f6f1", "#f5efde", "#e3decb", "#eee3d3", "#c9c499", "#6a772c", "#687138", "#beb195", "#ffe5ea", "#f8dadb", "#f0cfd0", "#fbe2e8", "#eed7ca", "#ebb8b2", "#f7c9ce", "#edc8c9", "#e6b5be", "#fcf0ee", "#ecc6ce", "#ffd1db", "#ad8b7f", "#3b4b21", "#ac847e", "#af6d7b", "#c78898", "#e5b5b2", "#ebc5c3", "#f0ccd1", "#f5d7dc", "#ffeaeb", "#e8bec6", "#efb7bf", "#e0c7c0", "#d3cbb8", "#d0ccab", "#f5ead8", "#f7f3ec", "#f8f8f7", "#f7f6f4"], ["#f7f6f4", "#f7f6f5", "#f7f5f2", "#eae4d7", "#f3ebd9", "#faebe0", "#b6ac80", "#4f5e1f", "#586331", "#ebd6d1", "#fee3e7", "#e9bfc0", "#edbbc9", "#ddd4b2", "#b49d70", "#ffe0ea", "#ebbfc5", "#e1b0b9", "#fdeaeb", "#f5d3d3", "#f3bdc1", "#ecafb6", "#3d4b25", "#515f3d", "#81775e", "#434a25", "#949359", "#efbfc5", "#efcacf", "#fde8ea", "#f7d9da", "#e9b9bd", "#f9c2ca", "#c9af87", "#95a048", "#c1c18d", "#f7eadc", "#e9e1cf", "#f4f1ea", "#f8f7f5"], ["#f7f6f4", "#f7f6f3", "#f9f8f7", "#eceae7", "#d7d1c5", "#eee8d7", "#f0e5d4", "#828550", "#384a17", "#7d7f5e", "#f8dbdc", "#ffddde", "#da809d", "#ceab82", "#758328", "#e0cac3", "#efc0ca", "#edcccf", "#fbe4e7", "#f8d9da", "#f5c4c8", "#e5aab0", "#b5a99e", "#ebabb3", "#ebacb5", "#b4ae8f", "#a6977e", "#d59da7", "#ffe0e1", "#f6d8da", "#e2b1b6", "#fdcbd4", "#e1b7a9", "#8d9b36", "#78824a", "#d4cabc", "#d1cabc", "#d5cebd", "#ebe6dd", "#f9f8f7"], ["#f7f6f4", "#f7f6f4", "#f6f5f3", "#fbfaf9", "#e7e5e0", "#d1cbbd", "#fcf6e5", "#e5e3ca", "#606a3d", "#3b4b1a", "#70704d", "#c6b2a3", "#a4727a", "#ac995b", "#728520", "#9a906c", "#f5a7b9", "#f3d0d5", "#fae5e7", "#f7d9da", "#f1bac0", "#eebfc5", "#fff5f5", "#e8abb4", "#ebbec2", "#ffeef1", "#e9bac0", "#dfbebd", "#edb7c1", "#d696a6", "#f7bcc9", "#deacae", "#939144", "#697c23", "#aea893", "#d6cdc0", "#d3ccbc", "#eae1d5", "#f7f6f5", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fafaf8", "#e8e4dd", "#ddd5c6", "#faf4e4", "#dedcc5", "#576139", "#3f4f20", "#415023", "#3a4c27", "#a2ab57", "#7f892e", "#6b7e38", "#8e675a", "#cb9299", "#ffe3e8", "#ffc8d1", "#e7a3ae", "#f1d1d5", "#fbe6e7", "#eac0c5", "#efd7d9", "#f9dbda", "#f3bdc1", "#f5b7bf", "#85685a", "#967d6d", "#aa9876", "#717a35", "#768726", "#69763f", "#d2c1ad", "#dccdb7", "#dccebf", "#f5f4f2", "#f8f7f5", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f8f8f6", "#d8d4cd", "#ccc4b7", "#f6efdf", "#dad8c3", "#505b32", "#5a672b", "#53612f", "#a6aa5b", "#858e2f", "#6a7e38", "#61742b", "#636d2d", "#a49071", "#887260", "#6b5d54", "#f9e0e0", "#f8dbde", "#f1d2d4", "#f8e3e5", "#f8d8d8", "#f2c4c6", "#eb9ead", "#6f6d45", "#6d852a", "#5f722c", "#5d7130", "#4d6229", "#a09579", "#d1b9a3", "#cfbca8", "#f2efec", "#f8f8f7", "#f7f5f3", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f8f7f5", "#f5f4f1", "#d3cdc3", "#cec5b9", "#f8f2e2", "#d3d3be", "#4b592c", "#6a7728", "#c1c565", "#909736", "#60732f", "#82903c", "#3e5022", "#4d5d2c", "#475e23", "#475034", "#ffe0df", "#f4d7db", "#f3d8db", "#fae4e6", "#f5d7d6", "#ffc7cf", "#c8918f", "#4e612c", "#4b592b", "#414e2e", "#30481f", "#6d6b4c", "#d1b8a0", "#cebaa3", "#efe9e5", "#fafaf9", "#f6f5f3", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#f9f9f7", "#eeece8", "#d1c8be", "#e2daca", "#fffeed", "#d0d1bd", "#2f4122", "#939c54", "#a9ae4a", "#6e7b28", "#7d8e38", "#4a5929", "#4c5932", "#6b763a", "#4e5d21", "#cdbaa3", "#ffd9e5", "#e5b1bc", "#ffe1e2", "#ffcfd8", "#d9a1a6", "#646c3d", "#405527", "#384525", "#2e401e", "#62684b", "#ceb8a0", "#d3bca4", "#e7dfd6", "#fafaf9", "#f6f5f2", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#faf9f8", "#e9e5dd", "#d8cfc2", "#e3dbcc", "#fffbe9", "#cecebe", "#6b754e", "#adb44e", "#898e2e", "#8a9332", "#707f33", "#5a6732", "#616d33", "#556526", "#617031", "#957c78", "#af8179", "#d5aaac", "#b5928c", "#596237", "#39511f", "#32421e", "#5c6543", "#a49b81", "#d4bca7", "#c3ab96", "#d3c7bd", "#fdfdfc", "#f6f5f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f8f7f5", "#dbd5cd", "#cfc7bb", "#d2cbbd", "#f2ecdb", "#e6e3d0", "#a1a562", "#69751d", "#828a2c", "#818d34", "#84933f", "#596530", "#5c6a2c", "#62732b", "#3e5027", "#5a6b33", "#384825", "#40591a", "#39521e", "#5d654c", "#b9b69f", "#e2cfbb", "#dac1ab", "#b19584", "#d1c0b2", "#faf9f8", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f8f8f6", "#f1efec", "#d0c8ba", "#d5c9bc", "#d3cbbd", "#f7f0df", "#f6f0df", "#a3a984", "#5d6d2f", "#52651f", "#728133", "#51602e", "#606e2c", "#6a7b32", "#5b6b36", "#425522", "#4f6326", "#878e5d", "#c1baa5", "#f1e0d3", "#decbbd", "#a28d80", "#b09a86", "#e2ceba", "#f7f5f2", "#f8f7f5", "#f7f6f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fafaf8", "#e5dfda", "#cdc1b2", "#d0c6b9", "#ebe3d2", "#e3decc", "#e7e1d3", "#dbd9c5", "#8d9575", "#5f6e32", "#3c4e23", "#576a23", "#516623", "#62713d", "#8e9571", "#d5cbb3", "#f2dfd4", "#f3e1d3", "#b1a196", "#9d8b80", "#b8a594", "#d0bda7", "#f5f1ea", "#f8f7f7", "#f7f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f3", "#f9f9f7", "#e2dad1", "#cbbfb2", "#dfd1c0", "#dbceba", "#c5baa9", "#d1c3b3", "#e5d1c3", "#c6b39a", "#686948", "#7e8853", "#b5b397", "#eadacb", "#ffebe0", "#fdeade", "#bcac9f", "#a19286", "#c4b5a8", "#d2c0b3", "#c5b19f", "#e8e1d9", "#fafaf9", "#f6f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f5", "#d1cac2", "#cbb7a5", "#d4bca6", "#ba9e8c", "#b39988", "#b8a391", "#dbc2b1", "#f3decd", "#f9e8db", "#fceadc", "#ebdacc", "#ddd0c0", "#f4e3d5", "#e1d1c3", "#c9baad", "#d7c5b6", "#cbb6a3", "#ddd2c7", "#fafafa", "#f6f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f3", "#f9f8f7", "#f2f0eb", "#bba18e", "#c4a894", "#d3baa8", "#e1cdbd", "#f0dfd0", "#edddd0", "#e2d3c6", "#ded0c1", "#dbcec0", "#d6cabd", "#d8cbbc", "#ead8c9", "#e7d4c4", "#c3b1a0", "#c9b49c", "#dcccb9", "#f7f6f6", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#e9dcd0", "#e5d3c4", "#e4d6c8", "#ded1c4", "#eeded0", "#d2c5b8", "#d1c5b9", "#d9cbbe", "#e3d3c6", "#d7c6b8", "#c5b3a5", "#c6b19f", "#dcc5ac", "#c0aa99", "#c2aea0", "#f7f3ef", "#f8f7f6", "#f7f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#fcfcf9", "#ddd2c8", "#c3b7aa", "#c9beb2", "#e0d3c4", "#e5d4c4", "#ccbcad", "#cfbcab", "#c7b3a2", "#c0ac9c", "#c3af9f", "#c2afa0", "#dcc7af", "#cab4a0", "#dfd6d1", "#fbfcfb", "#f6f5f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f5f3", "#dacec2", "#c6b6a9", "#c7b7aa", "#e8d6c5", "#d2c1b3", "#c4b4a6", "#c6b7a9", "#d8c9bd", "#cbbbae", "#bfac9e", "#cdb6a0", "#e4d4c2", "#f8f8f7", "#f7f6f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f5f3", "#fafaf9", "#ece8e3", "#beaea0", "#ccc0b5", "#e8d8ca", "#e1d2c4", "#ccbfb6", "#d1c3b8", "#d4c5b4", "#c5b19f", "#c5ae9c", "#c9b19d", "#f4f1ec", "#f8f7f6", "#f7f6f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f4f2", "#f9f8f5", "#c0a793", "#b7a08e", "#d9cabb", "#ebdaca", "#c6ae9e", "#bfa490", "#bea18b", "#c0a28d", "#9f7860", "#a78f80", "#fcfdfd", "#f6f4f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f2", "#fbfcfc", "#fbfcfa", "#e2d7c5", "#9d795f", "#96705a", "#9b745c", "#895a3f", "#81543a", "#8a5e44", "#966950", "#90684c", "#dbd0c7", "#fdfdfc", "#f5f4f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fcfdfc", "#e2d7ce", "#c4aea0", "#c9b4a4", "#cdb39e", "#97725b", "#b29481", "#b0907a", "#ab8e7b", "#b69c89", "#c3ad9c", "#c5b2a0", "#e8dcd0", "#f9faf9", "#f6f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f4f2", "#fdfefd", "#d7c7bd", "#c4ad9d", "#f5f3f1", "#f8f3ec", "#b38d72", "#b49d8c", "#eee3d5", "#e0d3c8", "#cfc3b9", "#dbc9b7", "#c5b1a3", "#c2ad9b", "#e7d6c7", "#f8f8f7", "#f7f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f5f3", "#fafaf9", "#ece6e1", "#c4ae9f", "#ffffff", "#f3efeb", "#b59985", "#e2ccbd", "#e1d2c8", "#eeddd1", "#deccbd", "#cbb7a8", "#ddc4af", "#dac3ac", "#c0b29c", "#bebcb0", "#ffffff", "#f4f3f0", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fafaf8", "#ebe6e1", "#c8b3a5", "#d9c9bf", "#bca393", "#e9e1db", "#bfc199", "#b1ae82", "#beb698", "#cec1a9", "#beb695", "#afab85", "#596132", "#909771", "#7e8678", "#d4d6cd", "#ffffff", "#f5f4f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fafaf9", "#ebe4de", "#dcd0c8", "#fcfbfc", "#e3e6d9", "#727f28", "#58681f", "#415315", "#c3c7bb", "#9aa674", "#899667", "#707d52", "#5a6434", "#b8b99f", "#808677", "#e4e4e0", "#f9f9f7", "#f6f5f3", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fafaf9", "#fcfdfc", "#fbf9fb", "#acb279", "#67751e", "#7c8851", "#576533", "#efeef1", "#c7ccac", "#76824b", "#babea2", "#616b4b", "#949970", "#aaae97", "#b6b9af", "#fdfcfb", "#f5f4f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#f6f4f2", "#f9f9f9", "#959f53", "#9da47c", "#a4ab86", "#535f38", "#fffeff", "#efeee3", "#6d7a36", "#c5c9b5", "#d0d3c9", "#cfd0c3", "#aeb290", "#fefdfc", "#f6f5f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fbfaf9", "#d7d8c7", "#eeeeec", "#a5ab8a", "#a8ad9c", "#fdfcfb", "#fcfbfb", "#b0b68f", "#dfe0d6", "#ffffff", "#fdfbfa", "#f7f6f4", "#f6f5f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"], ["#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f6f5f3", "#fdfcfd", "#faf9f7", "#f4f3ef", "#fffefd", "#f7f6f4", "#f7f6f4", "#faf9f8", "#f7f6f4", "#f5f4f2", "#f6f5f2", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4", "#f7f6f4"]];
+const ucapan = document.getElementById('ucapan');
+const aura = document.getElementById('aura');
+const b1 = document.getElementById('b1');
+const b2 = document.getElementById('b2');
+const b3 = document.getElementById('b3');
+const b4 = document.getElementById('b4');
+const gift = document.getElementById('gift');
+const giftTop = document.getElementById('giftTop');
+const boom = document.getElementById('boom');
+const kado = document.getElementById('kado');
+const pesan = document.getElementById('pesan');
+const final = document.getElementById('final');
+const takeGift = document.getElementById('takeGift');
+const bucketControlArea = document.getElementById('bucketControlArea');
+const grid = document.getElementById('grid');
+const auraRing = document.getElementById('auraRing');
+let iframe = null;
+let confettiRunning = false;
 
-// Fade out setiap tombol saat diklik
-tombol.forEach(btn => {
-  btn.addEventListener("click", () => {
-    btn.classList.add("fade-out");
-    setTimeout(() => btn.style.display = "none", 800);
-  });
-});
+// build pixel grid inside gift (40x40)
+for (let r=0;r<40;r++){ for (let c=0;c<40;c++){
+  const d = document.createElement('div');
+  d.className = 'pixel';
+  d.dataset.r = r; d.dataset.c = c;
+  d.style.background = colorMatrix[r][c];
+  grid.appendChild(d);
+}} 
 
-// Tombol terakhir: mulai animasi teks & gift
-document.getElementById("btn4").addEventListener("click", () => {
-  const judul = document.getElementById("judul");
-  judul.textContent = "💖 Mode Scroll Teks No Jutsu Aktif 💖";
+// helper sleep
+const sleep = ms => new Promise(res => setTimeout(res,ms));
 
-  setTimeout(() => {
-    judul.textContent = "Maaf yaw gabisa dateng, ngabarin nya dadakannsii luu👊🏻";
-  }, 1500);
-
-  setTimeout(() => {
-    judul.textContent = "Coba kalo dari kemaren, kann minimal bisa ngasih gift ato bucket👊🏻";
-  }, 4000);
-
-  setTimeout(() => {
-    judul.textContent = "Tapi tenangg, ni ada bucket juga ko (walopun onlen heheew)";
-  }, 7000);
-
-  setTimeout(() => {
-    judul.textContent = "✨✨✨";
-    showGift();
-  }, 10000);
-});
-
-// Menampilkan kado dan tombol gift
-function showGift() {
-  gift.style.display = "block";
-  const btnGift = document.createElement("button");
-  btnGift.textContent = "Ambil Gift-nya Disini";
-  btnGift.onclick = () => {
-    gift.style.display = "none";
-    btnGift.remove();
-    bucket.style.display = "block";
-  };
-  document.body.appendChild(btnGift);
+async function typeScrollText(text, targetEl, perChar=60){
+  targetEl.textContent = '';
+  for (let i=0;i<text.length;i++){
+    targetEl.textContent += text[i];
+    targetEl.style.color = (i%2===0)?'#fff7f8':'#ffeef3';
+    await sleep(perChar);
+  }
 }
+
+function blinkAura(times=8){
+  let i=0;
+  const t = setInterval(()=>{
+    aura.style.opacity = aura.style.opacity === '0.9' ? '0.18' : '0.9';
+    i++;
+    if (i>=times){ clearInterval(t); aura.style.opacity = '0.18'; }
+  },150);
+}
+
+function playMusic(){
+  if (iframe) return;
+  iframe = document.createElement('iframe');
+  iframe.width = 0; iframe.height = 0; iframe.style.display='none';
+  iframe.allow = 'autoplay';
+  iframe.src = 'https://www.youtube.com/embed/QURWea6FqBI?autoplay=1&loop=1&playlist=QURWea6FqBI&controls=0&modestbranding=1';
+  document.body.appendChild(iframe);
+}
+
+// stage button flow with immediate fade-out
+b1.addEventListener('click', ()=>{ b1.classList.add('fade-out'); b2.classList.remove('hidden'); });
+b2.addEventListener('click', ()=>{ b2.classList.add('fade-out'); b3.classList.remove('hidden'); });
+b3.addEventListener('click', ()=>{ b3.classList.add('fade-out'); b4.classList.remove('hidden'); });
+
+// TAPI BOONG triggers main animation sequence
+b4.addEventListener('click', async ()=>{
+  b4.classList.add('fade-out');
+  playMusic();
+  gift.classList.remove('hidden');
+  kado.textContent = '';
+  await runFullSequence();
+  bucketControlArea.classList.remove('hidden');
+});
+
+async function runFullSequence(){
+  const main = "✨HAPPY SEMPROTULATIONGG YAWW👩🏻‍🎓✨";
+  await typeScrollText(main, ucapan, 70);
+  blinkAura(10);
+  await sleep(300);
+
+  kado.style.padding = '8px'; kado.style.borderRadius='8px'; kado.style.background='rgba(255,255,255,0.04)';
+  await sleep(700);
+
+  boom.classList.add('show');
+  setTimeout(()=> boom.classList.remove('show'), 700);
+  giftTop.style.transform = 'rotateX(80deg) translateY(-30px)';
+  giftTop.textContent = '';
+
+  await sleep(600);
+
+  const p1 = "Maaf yaw gabisa dateng, ngabarin nya dadakannsii luu👊🏻";
+  const p2 = "Coba kalo dari kemaren, kann minimal bisa ngasih gift ato bucket👊🏻";
+  const p3 = "Tapi tenangg, ni ada bucket juga ko (walopun onlen heheew)";
+
+  await typeScrollText(p1, pesan, 45);
+  await sleep(1500);
+  await typeScrollText(p2, pesan, 45);
+  await sleep(600);
+  await typeScrollText(p3, pesan, 45);
+  await sleep(1500);
+
+  bucketControlArea.classList.remove('hidden');
+  bucketControlArea.setAttribute('aria-hidden','false');
+}
+
+takeGift.addEventListener('click', async ()=>{
+  takeGift.disabled = true;
+  giftTop.style.transform = 'rotateX(85deg) translateY(-36px)';
+  boom.classList.add('show');
+  setTimeout(()=> boom.classList.remove('show'), 500);
+  grid.classList.add('show');
+  auraRing.classList.add('on');
+  await revealPixelGrow();
+  final.innerHTML = "🌸 MOGA LANJAR SKRIPSI-NYA YAWW 🌸";
+  startConfetti();
+});
+
+async function revealPixelGrow(){
+  const pixels = Array.from(grid.querySelectorAll('.pixel'));
+  const rows = {};
+  pixels.forEach(el => {
+    const r = parseInt(el.dataset.r,10);
+    if (!rows[r]) rows[r]=[];
+    rows[r].push(el);
+  });
+  const rowKeys = Object.keys(rows).map(Number).sort((a,b)=>b-a);
+  for (let i=0;i<rowKeys.length;i++){
+    const row = rows[rowKeys[i]];
+    for (let j=0;j<row.length;j++){
+      setTimeout(()=> row[j].classList.add('show'), j*6);
+    }
+    auraRing.style.boxShadow = '0 0 ' + (8 + (i%6)*3) + 'px rgba(255,105,180,0.45)';
+    await sleep(40);
+  }
+  let pulses = 0;
+  const pulseInterval = setInterval(()=>{
+    auraRing.style.transform = 'translate(-50%,-50%) scale(' + (1 + 0.02*Math.sin(Date.now()/200)) + ')';
+    pulses++;
+    if (pulses>70) clearInterval(pulseInterval);
+  },60);
+  await sleep(800);
+  auraRing.classList.remove('on');
+}
+
+function startConfetti(){
+  if (confettiRunning) return;
+  confettiRunning = true;
+  const canvas = document.getElementById('confetti');
+  const ctx = canvas.getContext('2d');
+  function resize(){ canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+  resize(); window.addEventListener('resize', resize);
+  const parts=[]; const colors=['#ff6a00','#ff2f00','#ffb6c1','#ffd1e6','#fff5f8'];
+  for (let i=0;i<160;i++){ parts.push({x:Math.random()*canvas.width,y:Math.random()*-canvas.height,r:Math.random()*6+3,vx:Math.random()*1-0.5,vy:Math.random()*2+1,c:colors[Math.floor(Math.random()*colors.length)]}); }
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for (let p of parts){
+      ctx.beginPath(); ctx.fillStyle = p.c; ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+      p.x += p.vx; p.y += p.vy;
+      if (p.y > canvas.height+20){ p.y = -20; p.x = Math.random()*canvas.width; }
+    }
+    if (confettiRunning) requestAnimationFrame(draw);
+  }
+  draw();
+}
+
 </script>
 </body>
 </html>
